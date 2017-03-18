@@ -1,0 +1,632 @@
+---
+title: "Intro to R"
+subtitle: ""
+author: "Jakub Nowosad"
+date: ""
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+```
+
+## Object
+
+- Everything in R is an object
+
+![](fig/obiekt.png)
+
+<!--
+Moje pierwsze kroki
+
+<center>
+![https://www.flickr.com/photos/38463026@N04/7432529536/](fig/first_step.jpg)
+</center>
+-->
+
+---
+## Assignment operator
+
+*<-* assigns a value to an object
+
+```{r}
+x <- 2
+x
+x + 3
+y <- x + 3
+y
+```
+
+---
+## Combine values
+
+*c()* combines its arguments (elements) to a one object
+
+```{r}
+c(1, 2, 3)
+```
+
+```{r}
+x <- c(1, 2, 3)
+x
+```
+
+```{r}
+y <- x * 2
+y
+```
+
+---
+## What does function do?
+
+![](fig/funkcja.png)
+
+---
+## Object?
+
+```{r}
+2 + 2
+```
+
+```{r}
+x <- 2
+x + x
+```
+
+```{r}
+x <- 2
+y <- x + x
+y
+```
+
+```{r}
+x <- 2
+x <- x + x
+x
+```
+
+---
+## Why do I need a package?
+- Aktualnie w oficjalnym repozytorium (zwanym CRAN) znajduje się ponad 7000 pakietów
+- Każdy z nich zawiera zbiór funkcji, który rozszerza możliwości R
+- Do instalacji pakietu w R służy funkcja *install.packages()*, np:
+
+```{r, eval=FALSE}
+install.packages('ggplot2')
+```
+
+- Podobnie jak instalowanie programów na komputerze - robimy to tylko jeden raz!
+- Zainstalowane pakietu można aktualizować za pomocą funkcji *update.packages()*
+
+```{r, eval=FALSE}
+update.packages()
+```
+
+- Użycie wybranego pakietu wymaga załadowania go do R za pomocą funkcji *library()*
+- Ładowanie wybranych pakietów do R robimy po każdym uruchomieniu R!
+
+```{r}
+library('ggplot2')
+```
+
+---
+## Where am I? - Working directory
+
+- Working directory is the current working directory (location on a hard drive) of the R process
+- Function *getwd()* returns an absolute filepath representing the current working directory:
+
+```{r}
+getwd()
+```
+
+- Working directory can be change using **Ctrl+Shift+H** shortcut for RStudio (alternatively Session -> Set Working Directory -> Choose Directory...) or a function *setwd()*:
+
+```{r, eval=FALSE}
+setwd("home/jakub/Documents/rope/")
+```
+
+- ...in Windows:
+
+```{r, eval=FALSE}
+setwd("C:/Users/jakub/Documenty/rope/")
+```
+
+---
+## Quo Vadis
+
+- Folder roboczy jest ważny ponieważ pozwala na korzystanie z względnej ścieżki, co znacząco upraszcza pracę, szczególnie gdy dane/obliczenia przenosi się pomiędzy różnymi komputerami
+- Relative filepath, *"data/plik.rds"*
+
+```{r, eval=FALSE}
+gap <- readRDS("data/gapminder.rds")
+```
+
+- Absolute filepath *"home/jakub/Documents/rope/data/plik.rds"*
+```{r, eval=FALSE}
+gap <- readRDS("/home/jakub/Documents/rope/data/gapminder.rds")
+```
+
+- ...in Windows:
+```{r, eval=FALSE}
+gap <- readRDS("C:/Users/jakub/Documenty/rope/data/gapminder.rds")
+```
+
+---
+## R
+- https://www.r-project.org/
+- http://cran.rstudio.com/bin/linux/
+- http://cran.rstudio.com/bin/windows/base/
+- http://cran.rstudio.com/bin/macosx/
+
+![](fig/R.png)  
+
+---     
+## RStudio
+- http://www.rstudio.com/ide/download/desktop
+- This is an Integrated Development Environment (IDE) for R
+- Zawiera bardzo wiele użytecznych funkcjonalności, tj. wbudowany edytor, podświetlanie składni, automatyczne uzupełnianie kodu i wiele innych
+
+![](fig/rstudio.png)
+
+---
+## Keyboard shortcut
+
+- **Alt+Shift+K** - show keyboard shortcut reference
+- **Ctrl+Enter** - run current line/selection
+- **Alt+-** - insert assignment operator <- 
+- **Tab** - attempt completion	
+- **F1** - show help for function at cursor
+- **Ctrl+Shift+C** - comment/uncomment current line/selection
+- **Up/Down** (in a console) - navigate candidates
+- **Ctrl+Shift+H** - change working directory
+- **Esc** - interrupt currently executing command
+
+---
+## Help me!
+
+![https://www.flickr.com/photos/apelad/6845309733](fig/help.jpg)
+
+---
+## Help in R
+
+```{r, eval=FALSE}
+# if you know a function name
+?mean
+
+# if you know what you want to do
+??"anova"
+```
+
+- Pomoc można także wyszukać korzystając z okna Help w RStudio lub ze skrótu **F1**
+
+## Online help
+- [stackoverflow.com](http://stackoverflow.com/questions/tagged/r)
+- [RDocumentation](http://www.rdocumentation.org/)
+- Web search engines [Rseek](http://www.rseek.org/), [Duckduckgo](http://duckduckgo.com/), [Google](http://google.com/), [Bing](http://bing.com/), etc.
+
+---
+## R want data!
+
+![https://www.flickr.com/photos/shellewill79/5333263261/](fig/cookie.jpg)
+
+---
+## CSV data
+
+- Reading a data
+
+```{r, eval=FALSE}
+skoki2013 <- read.csv2("data/skijumps.csv")
+skoki2013 <- read.csv("data/skijumps.csv")
+```
+
+![csv](fig/csv.png)
+
+- Writing a data
+
+```{r, eval=FALSE}
+write.csv(skoki2013, file="data/skijumps_csv.csv")
+write.csv2(skoki2013, file="data/skijumps_csv.csv")
+```
+
+---
+## RData format
+
+- Loading a data
+
+```{r, eval=FALSE}
+load("data/temperature.RData")
+```
+
+- Saving a data
+
+```{r, eval=FALSE}
+save(storkowo, file="data/new_temperature.RData")
+```
+
+---
+## RDS format
+
+- Loading a data
+
+```{r, eval=FALSE}
+gap <- readRDS("data/gapminder.rds")
+```
+
+- Saving a data
+
+```{r, eval=FALSE}
+saveRDS(gap, file="data/new_gapminder.rds")
+```
+
+---
+## Data from R packages
+
+- Loading a data
+
+```{r}
+#install.packages('ggplot2')
+library('ggplot2')
+data("economics")
+economics
+```
+
+---
+## My object is very classy
+
+![Elegant z Mosiny (1)” autorstwa Awersowy - Praca własna. Licencja GFDL na podstawie Wikimedia Commons](fig/klasa2.jpg)
+
+---
+## Klasa obiektu
+- Istnieje ogromna liczba klas obiektów w R
+- Każdy może stworzyć swoją własną klasę!
+- Różne funkcje wymagają różnych klas obiektów
+- Istnieją cztery podstawowe klasy obiektów w R:
+    - Wektor (ang. *vector*)
+    - Macierz (ang. *matrix*)
+    - Ramka danych (ang. *data-frame*)
+    - Lista (ang. *list*)
+
+---
+## Wektor (ang. *vector*)
+
+- Wektor to najprostsza klasa obiektu w R, ponieważ jest on jednowymiarowy
+- Do tworzenia wektorów często przydaje się funkcja *c()*
+
+```{r}
+wektor_tekstowy <- c("kot", "pies")
+wektor_logiczny <- c(TRUE, FALSE)
+wektor_liczbowy <- c(1, 2.35)
+wektor_mieszany <- c("kot", 2.35)
+```
+
+---
+## Wektor (ang. *vector*)
+
+```{r}
+wektor_tekstowy <- c("kot", "pies")
+wektor_logiczny <- c(TRUE, FALSE)
+wektor_liczbowy <- c(1, 2.35)
+wektor_mieszany <- c("kot", 2.35)
+```
+
+```{r}
+class(wektor_tekstowy)
+
+class(wektor_logiczny)
+
+class(wektor_liczbowy)
+
+class(wektor_mieszany)
+```
+
+---
+## Ramka danych (ang. *data-frame*)
+
+- Ramka danych jest najczęściej używaną klasą obiektu w R
+- Przypomina ona tabelę zawierającą wiersze (obserwacje) oraz kolumny (zmienne)
+- W uproszczeniu, kolejne kolumny ramki danych to wektory
+- Ramka danych może też być efektem wczytania danych, np. z pliku CSV
+
+```{r}
+df <- data.frame(tekstowy=c("kot", "pies"),
+           logiczny=c(TRUE, FALSE),
+           liczbowy=c(1, 2.35))
+df
+```
+
+---
+## Typy danych
+
+```{r}
+tekst <- "pies"
+logiczny <- TRUE
+liczbowy <- 1.23
+czynnikowy <- as.factor("pies")
+```
+
+```{r}
+class(tekst)
+class(logiczny)
+class(liczbowy)
+class(czynnikowy)
+```
+
+---
+## Typy danych - czynnikowy (ang.*factor*)
+
+```{r}
+tekst2 <- c("pies", "kot", "mysz", "pies")
+tekst2
+class(tekst2)
+```
+
+```{r}
+czynnikowy2 <- as.factor(c("pies", "kot", "mysz", "pies"))
+czynnikowy2
+class(czynnikowy2)
+```
+
+---
+## Moje pierwsze słowa
+
+![](fig/elem.png)
+
+---
+## Moje pierwsze słowa
+
+```{r}
+# install.packages('gapminder')
+library('gapminder')
+data("gapminder")
+```
+
+- Funkcja *str()* wyświetla strukturę obiektu, w tym np. klasę obiektu, liczbę obserwacji (wierszy), liczbę zmiennych (kolumn), nazwy zmiennych, typ zmiennych oraz przykładowe wartości 
+
+```{r}
+str(gapminder)
+```
+
+---
+## Moje pierwsze słowa
+
+- Funkcja *head()* domyślnie zwraca sześć pierwszych obserwacji (wierszy) w ramce danych
+
+```{r}
+head(gapminder)
+```
+
+---
+## Moje pierwsze słowa
+
+- Funkcja *summary()* wyświetla podsumowanie numeryczne 
+- Podsumownie numeryczne zależy od typu zmiennej, np. dla zmiennych liczbowych jest to wartość minimalna, pierwszy kwartyl, mediana, średnia, trzeci kwartyl oraz wartość maksymalna a dla zmiennych czynnikowych to liczba obserwacji w danym poziomie
+
+```{r}
+summary(gapminder)
+```
+
+---
+## Znajdź mnie!
+
+![https://www.flickr.com/photos/infomatique/5846162059/](fig/wally.jpg)
+
+---
+## Wektor (ang. *vector*) - indeksowanie
+
+- Do wyboru elementu/ów z wektora w R służy operator *[]*
+
+```{r}
+x <- c(2.1, 1.3, 5.6, 4.9, 8.4)
+x
+```
+
+```{r}
+x[3]
+```
+
+```{r}
+x[2:4]
+```
+
+```{r}
+x[c(1, 5)]
+```
+
+---
+## Wektor (ang. *vector*) - indeksowanie
+
+- Do wyboru elementu/ów z wektora w R służy operator *[]*
+
+```{r}
+x <- c(2.1, 1.3, 5.6, 4.9, 8.4)
+x
+```
+
+```{r}
+x[-3]
+```
+
+```{r}
+x[x>3]
+```
+
+```{r}
+x
+```
+
+
+---
+## Wektor (ang. *vector*) - indeksowanie
+
+- Z wyniku indeksowania można stworzyć nowy obiekt
+
+```{r}
+x <- c(2.1, 1.3, 5.6, 4.9, 8.4)
+x
+```
+
+```{r}
+y <- x[3]
+y
+```
+
+```{r}
+z <- x[2:4]
+z
+```
+
+```{r}
+nowy <- z * y
+nowy
+```
+
+---
+## Ramka danych (ang. *data-frame*) - indeksowanie
+- Ramka danych jest obiektem (co najmniej) dwuwymiarowym
+- Dodatkowo, w uproszczeniu, kolejne kolumny ramki danych to wektory
+- Do wyboru elementów z ramki danych może służyć, między innymi, operator *[]*, operator *$* oraz funkcja *subset()*
+
+```{r}
+library('gapminder')
+data("gapminder")
+head(gapminder)
+```
+
+---
+## Ramka danych (ang. *data-frame*) - indeksowanie
+
+- Operator *$* pozwala na wybranie zmiennej (kolumny) na podstawie jej nazwy
+- W efekcie otrzymujemy wektor
+
+```{r}
+gapminder$country
+```
+
+---
+## Ramka danych (ang. *data-frame*) - indeksowanie
+
+- Operator *$* pozwala na wybranie zmiennej (kolumny) na podstawie jej nazwy
+- W efekcie otrzymujemy wektor
+
+```{r}
+kraje <- gapminder$country
+kraje
+```
+
+---
+## Ramka danych (ang. *data-frame*) - indeksowanie
+
+- W przypadku ramek danych operator *[]* wymaga podania dwóch argumentów - jednego dla wierszy (obserwacji) oraz jednego dla kolumn (zmiennych) - *[wiersze, kolumny]*
+
+```{r}
+head(gapminder)
+```
+
+---
+## Ramka danych (ang. *data-frame*) - indeksowanie
+
+- W przypadku ramek danych operator *[]* wymaga podania dwóch argumentów - jednego dla wierszy (obserwacji) oraz jednego dla kolumn (zmiennych) - *[wiersze, kolumny]*
+
+```{r}
+gapminder[3, ]
+```
+
+---
+## Ramka danych (ang. *data-frame*) - indeksowanie
+- W przypadku ramek danych operator *[]* wymaga podania dwóch argumentów - jednego dla wierszy (obserwacji) oraz jednego dla kolumn (zmiennych) - *[wiersze, kolumny]*
+
+```{r}
+gapminder[2, 3]
+```
+
+---
+## Ramka danych (ang. *data-frame*) - indeksowanie
+- W przypadku ramek danych operator *[]* wymaga podania dwóch argumentów - jednego dla wierszy (obserwacji) oraz jednego dla kolumn (zmiennych) - *[wiersze, kolumny]*
+
+```{r}
+gapminder[-(1:1650), 3]
+```
+
+---
+## Ramka danych (ang. *data-frame*) - indeksowanie
+- W przypadku ramek danych operator *[]* wymaga podania dwóch argumentów - jednego dla wierszy (obserwacji) oraz jednego dla kolumn (zmiennych) - *[wiersze, kolumny]*
+
+```{r}
+gapminder[c(2,4), -3]
+```
+
+---
+## Ramka danych (ang. *data-frame*) - indeksowanie
+- W przypadku ramek danych operator *[]* wymaga podania dwóch argumentów - jednego dla wierszy (obserwacji) oraz jednego dla kolumn (zmiennych) - *[wiersze, kolumny]*
+
+```{r}
+gapminder[c(2,4), c("country", "pop")]
+```
+
+---
+## Ramka danych (ang. *data-frame*) - indeksowanie
+- Do indeksowania można wykorzystać operatory logiczne: ==, !=, >, >=, <, <=, &, |
+
+```{r}
+gapminder[gapminder$lifeExp>82, c("country", "pop")]
+```
+
+```{r}
+subset(gapminder, pop>1000000000)
+```
+
+---
+## Ramka danych (ang. *data-frame*) - indeksowanie
+- Do indeksowania można wykorzystać operatory logiczne: ==, !=, >, >=, <, <=, &, |
+
+
+```{r}
+subset(gapminder, pop>1000000000 & country=='India')
+```
+
+```{r}
+subset(gapminder, pop>1000000000 | continent=='Oceania')
+```
+
+---
+## Ramka danych (ang. *data-frame*) - indeksowanie
+- Podobnie jak w przypadku wektorów, z wyniku indeksowania ramki danych można stworzyć nowy obiekt i dalej na nim pracować
+
+```{r}
+afryka <- subset(gapminder, continent=='Africa')
+afryka
+```
+
+---
+## Ramka danych (ang. *data-frame*) - indeksowanie
+- Podobnie jak w przypadku wektorów, z wyniku indeksowania ramki danych można stworzyć nowy obiekt i dalej na nim pracować
+
+```{r}
+rok2007 <- gapminder[gapminder$year==2007, ]
+rok2007
+```
+
+---
+## What's next?
+
+<video src="fig/video.webm" controls autoplay="true" loop="loop">
+</video>
+
+---
+## What's next?
+1. [Beginner's guide to R: Introduction](http://www.computerworld.com/article/2497143/business-intelligence/business-intelligence-beginner-s-guide-to-r-introduction.html)
+2. [A (very) short introduction to R](references/Torfs+Brauer-Short-R-Intro.pdf)
+3. [Introduction to R](references/Introduction_to_R.pdf)
+4. [R - First Steps](references/R-firststeps.pdf)
+5. [An intro to R for new programmers](http://rforcats.net/)
+6. [introducing R to a non-programmer in one hour ](http://alyssafrazee.com/introducing-R.html)
+7. [Try R](http://tryr.codeschool.com/)
+8. [60+ R resources to improve your data skills](http://www.computerworld.com/article/2497464/business-intelligence/business-intelligence-60-r-resources-to-improve-your-data-skills.html)
