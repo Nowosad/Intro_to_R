@@ -95,23 +95,23 @@ x
 
 ---
 ## Why do I need a package?
-- Aktualnie w oficjalnym repozytorium (zwanym CRAN) znajduje się ponad 7000 pakietów
-- Każdy z nich zawiera zbiór funkcji, który rozszerza możliwości R
-- Do instalacji pakietu w R służy funkcja *install.packages()*, np:
+- As of March 2017, there were over 10,000 packages on the official repository (Comprehensive R Archive Network - CRAN)
+- A package is a group of functions
+- *install.packages()* function can be used to install packages from CRAN:
 
 ```{r, eval=FALSE}
 install.packages('ggplot2')
 ```
 
-- Podobnie jak instalowanie programów na komputerze - robimy to tylko jeden raz!
-- Zainstalowane pakietu można aktualizować za pomocą funkcji *update.packages()*
+- You only need to install a package once!
+- *update.packages()* function can be use to update installed packages
 
 ```{r, eval=FALSE}
 update.packages()
 ```
 
-- Użycie wybranego pakietu wymaga załadowania go do R za pomocą funkcji *library()*
-- Ładowanie wybranych pakietów do R robimy po każdym uruchomieniu R!
+- To use a package, load it with function *library()*
+- Unlike *install.packages()*, you need to load selected packages everytime you run R!
 
 ```{r}
 library('ggplot2')
@@ -127,7 +127,7 @@ library('ggplot2')
 getwd()
 ```
 
-- Working directory can be change using **Ctrl+Shift+H** shortcut for RStudio (alternatively Session -> Set Working Directory -> Choose Directory...) or a function *setwd()*:
+- Working directory can be change using **Ctrl+Shift+H** shortcut in RStudio (alternatively Session -> Set Working Directory -> Choose Directory...) or a function *setwd()*:
 
 ```{r, eval=FALSE}
 setwd("home/jakub/Documents/rope/")
@@ -142,7 +142,8 @@ setwd("C:/Users/jakub/Documenty/rope/")
 ---
 ## Quo Vadis
 
-- Folder roboczy jest ważny ponieważ pozwala na korzystanie z względnej ścieżki, co znacząco upraszcza pracę, szczególnie gdy dane/obliczenia przenosi się pomiędzy różnymi komputerami
+- Working directory is important, because it is allows to use a relative filepath
+- In most of the cases, the use of a relative filepath is recommended It simplified work, when data and code are moved between computers
 - Relative filepath, *"data/plik.rds"*
 
 ```{r, eval=FALSE}
@@ -156,7 +157,7 @@ gap <- readRDS("/home/jakub/Documents/rope/data/gapminder.rds")
 
 - ...in Windows:
 ```{r, eval=FALSE}
-gap <- readRDS("C:/Users/jakub/Documenty/rope/data/gapminder.rds")
+gap <- readRDS("C:/Users/jakub/Documents/rope/data/gapminder.rds")
 ```
 
 ---
@@ -172,7 +173,7 @@ gap <- readRDS("C:/Users/jakub/Documenty/rope/data/gapminder.rds")
 ## RStudio
 - http://www.rstudio.com/ide/download/desktop
 - This is an Integrated Development Environment (IDE) for R
-- Zawiera bardzo wiele użytecznych funkcjonalności, tj. wbudowany edytor, podświetlanie składni, automatyczne uzupełnianie kodu i wiele innych
+- RStudio got many useful features, such as text editor, syntax highlighting, suggested code auto-completion, and many more
 
 ![](fig/rstudio.png)
 
@@ -205,7 +206,7 @@ gap <- readRDS("C:/Users/jakub/Documenty/rope/data/gapminder.rds")
 ??"anova"
 ```
 
-- Pomoc można także wyszukać korzystając z okna Help w RStudio lub ze skrótu **F1**
+- You can also look for help using the Help window or **F1** key
 
 ## Online help
 - [stackoverflow.com](http://stackoverflow.com/questions/tagged/r)
@@ -248,7 +249,7 @@ load("data/temperature.RData")
 - Saving a data
 
 ```{r, eval=FALSE}
-save(storkowo, file="data/new_temperature.RData")
+save(my_object, file="data/new_temperature.RData")
 ```
 
 ---
@@ -284,94 +285,93 @@ economics
 ![Elegant z Mosiny (1)” autorstwa Awersowy - Praca własna. Licencja GFDL na podstawie Wikimedia Commons](fig/klasa2.jpg)
 
 ---
-## Klasa obiektu
-- Istnieje ogromna liczba klas obiektów w R
-- Każdy może stworzyć swoją własną klasę!
-- Różne funkcje wymagają różnych klas obiektów
-- Istnieją cztery podstawowe klasy obiektów w R:
-    - Wektor (ang. *vector*)
-    - Macierz (ang. *matrix*)
-    - Ramka danych (ang. *data-frame*)
-    - Lista (ang. *list*)
+## Object classes
+- There are many classes in R
+- Everybody can create a new class in R!
+- Some function works only with object of some class
+- There are four basic classes in R:
+    - Vector
+    - Matrix
+    - Data frame
+    - List
 
 ---
-## Wektor (ang. *vector*)
+## Vector
 
-- Wektor to najprostsza klasa obiektu w R, ponieważ jest on jednowymiarowy
-- Do tworzenia wektorów często przydaje się funkcja *c()*
+- A vektor is the simpliest R object class 
+- A vector can be created using *c()* function
 
 ```{r}
-wektor_tekstowy <- c("kot", "pies")
-wektor_logiczny <- c(TRUE, FALSE)
-wektor_liczbowy <- c(1, 2.35)
-wektor_mieszany <- c("kot", 2.35)
+vector_text <- c("cat", "dog")
+vector_logical <- c(TRUE, FALSE)
+vector_numeric <- c(1, 2.35)
+vector_mixed <- c("kot", 2.35)
 ```
 
 ---
-## Wektor (ang. *vector*)
+## Vector
 
 ```{r}
-wektor_tekstowy <- c("kot", "pies")
-wektor_logiczny <- c(TRUE, FALSE)
-wektor_liczbowy <- c(1, 2.35)
-wektor_mieszany <- c("kot", 2.35)
+vector_text <- c("cat", "dog")
+vector_logical <- c(TRUE, FALSE)
+vector_numeric <- c(1, 2.35)
+vector_mixed <- c("kot", 2.35)
 ```
 
 ```{r}
-class(wektor_tekstowy)
+class(vector_text)
 
-class(wektor_logiczny)
+class(vector_logical)
 
-class(wektor_liczbowy)
+class(vector_numeric)
 
-class(wektor_mieszany)
+class(vector_mixed)
 ```
 
 ---
-## Ramka danych (ang. *data-frame*)
+## Data frame
 
-- Ramka danych jest najczęściej używaną klasą obiektu w R
-- Przypomina ona tabelę zawierającą wiersze (obserwacje) oraz kolumny (zmienne)
-- W uproszczeniu, kolejne kolumny ramki danych to wektory
-- Ramka danych może też być efektem wczytania danych, np. z pliku CSV
+- A data frame is the most often used object class in R
+- Simple data frames resemble a table with rows (observations) and columns (variables)
+- A data frame can be also created by reading external files (such as .csv)
 
 ```{r}
-df <- data.frame(tekstowy=c("kot", "pies"),
-           logiczny=c(TRUE, FALSE),
-           liczbowy=c(1, 2.35))
+df <- data.frame(texts=c("cat", "dog"),
+           logicals=c(TRUE, FALSE),
+           numerics=c(1, 2.35))
 df
 ```
 
 ---
-## Typy danych
+## Data types
 
 ```{r}
-tekst <- "pies"
-logiczny <- TRUE
-liczbowy <- 1.23
-czynnikowy <- as.factor("pies")
+type_text <- "dog"
+type_logical <- TRUE
+type_numeric <- 1.23
+type_factor <- as.factor("dog")
 ```
 
 ```{r}
-class(tekst)
-class(logiczny)
-class(liczbowy)
-class(czynnikowy)
+class(type_text)
+class(type_logical)
+class(type_numeric)
+class(type_factor)
 ```
 
 ---
-## Typy danych - czynnikowy (ang.*factor*)
+## Data types - factors
 
 ```{r}
-tekst2 <- c("pies", "kot", "mysz", "pies")
-tekst2
-class(tekst2)
+type_text2 <- c("dog", "cat", "mouse", "dog")
+type_text2
+class(type_text2)
 ```
 
 ```{r}
-czynnikowy2 <- as.factor(c("pies", "kot", "mysz", "pies"))
-czynnikowy2
-class(czynnikowy2)
+type_factor2 <- as.factor(c("dog", "cat", "mouse", "dog"))
+type_factor2
+class(type_factor2)
 ```
 
 ---
