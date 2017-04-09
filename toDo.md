@@ -4,3 +4,4 @@
 4. Update references
 5. fix gif
 6. add a new chapter
+7. update style
