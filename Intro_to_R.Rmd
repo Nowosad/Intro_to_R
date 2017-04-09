@@ -104,7 +104,7 @@ install.packages('ggplot2')
 ```
 
 - You only need to install a package once!
-- *update.packages()* function can be use to update installed packages
+- *update.packages()* function can be used to update installed packages
 
 ```{r, eval=FALSE}
 update.packages()
@@ -127,7 +127,7 @@ library('ggplot2')
 getwd()
 ```
 
-- Working directory can be change using **Ctrl+Shift+H** shortcut in RStudio (alternatively Session -> Set Working Directory -> Choose Directory...) or a function *setwd()*:
+- Working directory can be changed using **Ctrl+Shift+H** shortcut in RStudio (alternatively Session -> Set Working Directory -> Choose Directory...) or a function *setwd()*:
 
 ```{r, eval=FALSE}
 setwd("home/jakub/Documents/rope/")
@@ -143,8 +143,8 @@ setwd("C:/Users/jakub/Documenty/rope/")
 ## Quo Vadis
 
 - Working directory is important, because it is allows to use a relative filepath
-- In most of the cases, the use of a relative filepath is recommended It simplified work, when data and code are moved between computers
-- Relative filepath, *"data/plik.rds"*
+- In most of the cases, the use of a relative filepath is recommended. It simplifies work, especially when data and code are moved between computers
+- Relative filepath *"data/plik.rds"*
 
 ```{r, eval=FALSE}
 gap <- readRDS("data/gapminder.rds")
@@ -169,7 +169,7 @@ gap <- readRDS("C:/Users/jakub/Documents/rope/data/gapminder.rds")
 
 ![](fig/R.png)  
 
----     
+---
 ## RStudio
 - http://www.rstudio.com/ide/download/desktop
 - This is an Integrated Development Environment (IDE) for R
@@ -375,12 +375,14 @@ class(type_factor2)
 ```
 
 ---
-## Moje pierwsze słowa
+## My first words
 
-![](fig/elem.png)
+```{r, echo=FALSE}
+knitr::include_graphics("fig/elem.png")
+```
 
 ---
-## Moje pierwsze słowa
+## My first words
 
 ```{r}
 # install.packages('gapminder')
@@ -388,30 +390,45 @@ library('gapminder')
 data("gapminder")
 ```
 
-- Funkcja *str()* wyświetla strukturę obiektu, w tym np. klasę obiektu, liczbę obserwacji (wierszy), liczbę zmiennych (kolumn), nazwy zmiennych, typ zmiennych oraz przykładowe wartości 
+- The *str()* function displays the structure of an R object. It could shows, for example, a class of an object, number of observations (rows), number of variables (columns), names of variables, types of variables, and first few values
 
 ```{r}
 str(gapminder)
 ```
 
 ---
-## Moje pierwsze słowa
+## My first words
 
-- Funkcja *head()* domyślnie zwraca sześć pierwszych obserwacji (wierszy) w ramce danych
+- The *head()* function returns the first part of an object (default - the six first observations/rows)
 
 ```{r}
 head(gapminder)
 ```
 
 ---
-## Moje pierwsze słowa
+## My first words
 
-- Funkcja *summary()* wyświetla podsumowanie numeryczne 
-- Podsumownie numeryczne zależy od typu zmiennej, np. dla zmiennych liczbowych jest to wartość minimalna, pierwszy kwartyl, mediana, średnia, trzeci kwartyl oraz wartość maksymalna a dla zmiennych czynnikowych to liczba obserwacji w danym poziomie
+- The *summary()* function displays summaries of the results
+- This summary depends on a type of variable, for example a minimum, first quartile, median, mean, third quartile, and maximum is returned for numerical variables and a number of observation is returned for factor variables
 
 ```{r}
 summary(gapminder)
 ```
+
+---
+## How to start?
+
+<!--image-->
+
+---
+## How to start?
+
+<!--RStudio project-->
+
+---
+## How to start?
+
+<!--structure of folders-->
 
 ---
 ## What's next?
@@ -421,6 +438,7 @@ summary(gapminder)
 
 ---
 ## What's next?
+
 1. [Beginner's guide to R: Introduction](http://www.computerworld.com/article/2497143/business-intelligence/business-intelligence-beginner-s-guide-to-r-introduction.html)
 2. [A (very) short introduction to R](references/Torfs+Brauer-Short-R-Intro.pdf)
 3. [Introduction to R](references/Introduction_to_R.pdf)
