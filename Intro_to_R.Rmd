@@ -439,6 +439,8 @@ summary(gapminder)
 ---
 ## What's next?
 
+<!--https://blog.datazar.com/the-5-most-effective-ways-to-learn-r-d4cfdf0d524 -->
+
 1. [Beginner's guide to R: Introduction](http://www.computerworld.com/article/2497143/business-intelligence/business-intelligence-beginner-s-guide-to-r-introduction.html)
 2. [A (very) short introduction to R](references/Torfs+Brauer-Short-R-Intro.pdf)
 3. [Introduction to R](references/Introduction_to_R.pdf)
