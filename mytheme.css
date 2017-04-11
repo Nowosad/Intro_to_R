@@ -1,0 +1,10 @@
+.title-slide {
+  background-image: url(fig/first_step.jpg);
+  background-size: cover;
+}
+
+.title-slide h1 {
+  text-shadow: none;
+  color: #F7F8FA;
+  margin-top: 350px;
+}

@@ -5,6 +5,7 @@ author: "Jakub Nowosad"
 date: ""
 output:
   xaringan::moon_reader:
+    css: "mytheme.css"
     lib_dir: libs
     nature:
       highlightStyle: github
@@ -15,22 +16,13 @@ editor_options:
 ---
 
 ```{r setup, include=FALSE}
+library(knitr)
 options(htmltools.dir.version = FALSE)
 ```
 
-## Object
+## Everything in R is an object
 
-- Everything in R is an object
-
-![](fig/obiekt.png)
-
-<!--
-Moje pierwsze kroki
-
-<center>
-![https://www.flickr.com/photos/38463026@N04/7432529536/](fig/first_step.jpg)
-</center>
--->
+![](fig/objects.png)
 
 ---
 ## Assignment operator
@@ -67,7 +59,7 @@ y
 ---
 ## What does function do?
 
-![](fig/funkcja.png)
+![](fig/function.png)
 
 ---
 ## Object?
@@ -214,7 +206,7 @@ gap <- readRDS("C:/Users/jakub/Documents/rope/data/gapminder.rds")
 - Web search engines [Rseek](http://www.rseek.org/), [Duckduckgo](http://duckduckgo.com/), [Google](http://google.com/), [Bing](http://bing.com/), etc.
 
 ---
-## R want data!
+## R wants data!
 
 ![https://www.flickr.com/photos/shellewill79/5333263261/](fig/cookie.jpg)
 
@@ -280,9 +272,9 @@ economics
 ```
 
 ---
-## My object is very classy
+## My object is realy classy
 
-![Elegant z Mosiny (1)” autorstwa Awersowy - Praca własna. Licencja GFDL na podstawie Wikimedia Commons](fig/klasa2.jpg)
+![http://littlebritain.wikia.com/wiki/File:Emily_Howard_(1).jpg](fig/fashion.jpg)
 
 ---
 ## Object classes
@@ -418,7 +410,7 @@ summary(gapminder)
 ---
 ## How to start?
 
-<!--image-->
+![https://www.flickr.com/photos/cogdog/5528772562](fig/start.jpg)
 
 ---
 ## How to start?
@@ -449,3 +441,12 @@ summary(gapminder)
 6. [introducing R to a non-programmer in one hour ](http://alyssafrazee.com/introducing-R.html)
 7. [Try R](http://tryr.codeschool.com/)
 8. [60+ R resources to improve your data skills](http://www.computerworld.com/article/2497464/business-intelligence/business-intelligence-60-r-resources-to-improve-your-data-skills.html)
+
+
+---
+
+- https://www.flickr.com/photos/38463026@N04/7432529536/
+- https://www.flickr.com/photos/apelad/6845309733
+- https://www.flickr.com/photos/shellewill79/5333263261/
+- http://littlebritain.wikia.com/wiki/File:Emily_Howard_(1).jpg
+- https://www.flickr.com/photos/cogdog/5528772562

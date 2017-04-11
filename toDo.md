@@ -1,7 +1,5 @@
 1. Add a date and email to the title page
-2. Redo images + scale them
-3. Fix typos
-4. Update references
-5. fix gif
-6. add a new chapter
-7. update style
+2. Scale images
+3. Update references
+4. fix gif
+5. add a new chapter

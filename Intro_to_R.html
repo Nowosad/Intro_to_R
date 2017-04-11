@@ -4,7 +4,7 @@
     <title>Intro to R</title>
     <meta charset="utf-8">
     <meta name="author" content="Jakub Nowosad" />
-    <link href="libs/remark-css/example.css" rel="stylesheet" />
+    <link rel="stylesheet" href="mytheme.css" type="text/css" />
   </head>
   <body>
     <textarea id="source">
@@ -18,19 +18,9 @@ class: center, middle, inverse, title-slide
 
 
 
-## Object
+## Everything in R is an object
 
-- Everything in R is an object
-
-![](fig/obiekt.png)
-
-&lt;!--
-Moje pierwsze kroki
-
-&lt;center&gt;
-![https://www.flickr.com/photos/38463026@N04/7432529536/](fig/first_step.jpg)
-&lt;/center&gt;
---&gt;
+![](fig/objects.png)
 
 ---
 ## Assignment operator
@@ -101,7 +91,7 @@ y
 ---
 ## What does function do?
 
-![](fig/funkcja.png)
+![](fig/function.png)
 
 ---
 ## Object?
@@ -186,7 +176,7 @@ getwd()
 ```
 
 ```
-## [1] "/home/admin/Science/courses/Intro_to_R"
+## [1] "/home/jn/Documents/Intro_to_R"
 ```
 
 - Working directory can be changed using **Ctrl+Shift+H** shortcut in RStudio (alternatively Session -&gt; Set Working Directory -&gt; Choose Directory...) or a function `setwd()`:
@@ -282,7 +272,7 @@ gap &lt;- readRDS("C:/Users/jakub/Documents/rope/data/gapminder.rds")
 - Web search engines [Rseek](http://www.rseek.org/), [Duckduckgo](http://duckduckgo.com/), [Google](http://google.com/), [Bing](http://bing.com/), etc.
 
 ---
-## R want data!
+## R wants data!
 
 ![https://www.flickr.com/photos/shellewill79/5333263261/](fig/cookie.jpg)
 
@@ -372,9 +362,9 @@ economics
 ```
 
 ---
-## My object is very classy
+## My object is realy classy
 
-![Elegant z Mosiny (1)” autorstwa Awersowy - Praca własna. Licencja GFDL na podstawie Wikimedia Commons](fig/klasa2.jpg)
+![http://littlebritain.wikia.com/wiki/File:Emily_Howard_(1).jpg](fig/fashion.jpg)
 
 ---
 ## Object classes
@@ -637,7 +627,7 @@ summary(gapminder)
 ---
 ## How to start?
 
-&lt;!--image--&gt;
+![https://www.flickr.com/photos/cogdog/5528772562](fig/start.jpg)
 
 ---
 ## How to start?
@@ -658,6 +648,8 @@ summary(gapminder)
 ---
 ## What's next?
 
+&lt;!--https://blog.datazar.com/the-5-most-effective-ways-to-learn-r-d4cfdf0d524 --&gt;
+
 1. [Beginner's guide to R: Introduction](http://www.computerworld.com/article/2497143/business-intelligence/business-intelligence-beginner-s-guide-to-r-introduction.html)
 2. [A (very) short introduction to R](references/Torfs+Brauer-Short-R-Intro.pdf)
 3. [Introduction to R](references/Introduction_to_R.pdf)
@@ -666,6 +658,15 @@ summary(gapminder)
 6. [introducing R to a non-programmer in one hour ](http://alyssafrazee.com/introducing-R.html)
 7. [Try R](http://tryr.codeschool.com/)
 8. [60+ R resources to improve your data skills](http://www.computerworld.com/article/2497464/business-intelligence/business-intelligence-60-r-resources-to-improve-your-data-skills.html)
+
+
+---
+
+- https://www.flickr.com/photos/38463026@N04/7432529536/
+- https://www.flickr.com/photos/apelad/6845309733
+- https://www.flickr.com/photos/shellewill79/5333263261/
+- http://littlebritain.wikia.com/wiki/File:Emily_Howard_(1).jpg
+- https://www.flickr.com/photos/cogdog/5528772562
     </textarea>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
 <script>var slideshow = remark.create({
@@ -673,7 +674,7 @@ summary(gapminder)
 "highlightLines": true,
 "countIncrementalSlides": false
 });
-if (window.HTMLWidgets) slideshow.on('showSlide', function (slide) {setTimeout(function() {window.dispatchEvent(new Event('resize'));}, 100)});</script>
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {window.dispatchEvent(new Event('resize'));});</script>
 
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
