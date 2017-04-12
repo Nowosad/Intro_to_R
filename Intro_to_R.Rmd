@@ -443,6 +443,11 @@ summary(gapminder)
 8. [60+ R resources to improve your data skills](http://www.computerworld.com/article/2497464/business-intelligence/business-intelligence-60-r-resources-to-improve-your-data-skills.html)
 
 
+
+- [R is for archaeology](https://electricarchaeology.ca/2017/04/11/r-is-for-archaeology-a-report-on-the-2017-society-of-american-archaeology-meeting-by-b-marwick/)
+- [R for cats](https://rforcats.net/)
+
+
 ---
 
 - https://www.flickr.com/photos/38463026@N04/7432529536/
