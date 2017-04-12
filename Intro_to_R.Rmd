@@ -267,8 +267,8 @@ saveRDS(gap, file="data/new_gapminder.rds")
 ```{r}
 #install.packages('ggplot2')
 library('ggplot2')
-data("economics")
-economics
+data("midwest")
+midwest
 ```
 
 ---
