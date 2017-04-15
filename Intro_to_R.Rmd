@@ -1,8 +1,8 @@
 ---
 title: "Intro to R"
 subtitle: ""
-author: "Jakub Nowosad"
-date: ""
+author: "Jakub Nowosad <br>nowosad.jakub@gmail.com"
+date: "2017-04-24"
 output:
   xaringan::moon_reader:
     css: "mytheme.css"
@@ -23,6 +23,7 @@ options(htmltools.dir.version = FALSE)
 ## Everything in R is an object
 
 ![](fig/objects.png)
+
 
 ---
 ## Assignment operator
@@ -412,13 +413,22 @@ summary(gapminder)
 
 ![https://www.flickr.com/photos/cogdog/5528772562](fig/start.jpg)
 
----
-## How to start?
-
-<!--RStudio project-->
 
 ---
 ## How to start?
+
+Create a new RStudio project:
+
+![](fig/new_project.png)
+
+- All the files in a one place (**integrity**)
+- Easy to move between computers (**portability**)
+- Integration with version control systems - git and svn (**shareability**)
+
+---
+## How to start?
+
+- (Recommended) project' structure
 
 <!--structure of folders-->
 
