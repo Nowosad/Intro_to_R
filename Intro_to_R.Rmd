@@ -15,6 +15,8 @@ editor_options:
   chunk_output_type: console
 ---
 
+[](https://www.flickr.com/photos/38463026@N04/7432529536/)
+
 ```{r setup, include=FALSE}
 library(knitr)
 options(htmltools.dir.version = FALSE)
@@ -187,6 +189,7 @@ gap <- readRDS("C:/Users/jakub/Documents/rope/data/gapminder.rds")
 ## Help me!
 
 ![https://www.flickr.com/photos/apelad/6845309733](fig/help.jpg)
+###### https://www.flickr.com/photos/apelad/6845309733]
 
 ---
 ## Help in R
@@ -210,6 +213,7 @@ gap <- readRDS("C:/Users/jakub/Documents/rope/data/gapminder.rds")
 ## R wants data!
 
 ![https://www.flickr.com/photos/shellewill79/5333263261/](fig/cookie.jpg)
+###### https://www.flickr.com/photos/shellewill79/5333263261/
 
 ---
 ## CSV data
@@ -276,6 +280,7 @@ midwest
 ## My object is realy classy
 
 ![http://littlebritain.wikia.com/wiki/File:Emily_Howard_(1).jpg](fig/fashion.jpg)
+###### http://littlebritain.wikia.com/wiki/File:Emily_Howard_(1).jpg
 
 ---
 ## Object classes
@@ -412,6 +417,7 @@ summary(gapminder)
 ## How to start?
 
 ![https://www.flickr.com/photos/cogdog/5528772562](fig/start.jpg)
+###### https://www.flickr.com/photos/cogdog/5528772562
 
 
 ---
@@ -428,40 +434,40 @@ Create a new RStudio project:
 ---
 ## How to start?
 
-- (Recommended) project' structure
+Project' structure (starting point):
 
-<!--structure of folders-->
+```{r, engine='bash', eval = FALSE}
+project/
+  - README.Rmd # Project description
+  - R/         # For R code
+      - 01_data_download.R
+      - 02_data_processing.R
+      - 03_plots.R
+  - data/      # Preprocessed data
+      - water_quality_cleaned.rds
+      - landcover_wgs84.tif
+  - raw_data/  # Original data
+      - water_quality.csv
+      - landcover.tif
+  - text/      # Description of the results + figures
+      - water_quality.tex
+      - figs/
+          - 01_study_area.png
+          - 02_boxplots.png
+```
 
----
-## What's next?
-
-<video src="fig/video.webm" controls autoplay="true" loop="loop">
-</video>
 
 ---
 ## What's next?
 
 <!--https://blog.datazar.com/the-5-most-effective-ways-to-learn-r-d4cfdf0d524 -->
 
-1. [Beginner's guide to R: Introduction](http://www.computerworld.com/article/2497143/business-intelligence/business-intelligence-beginner-s-guide-to-r-introduction.html)
-2. [A (very) short introduction to R](references/Torfs+Brauer-Short-R-Intro.pdf)
-3. [Introduction to R](references/Introduction_to_R.pdf)
-4. [R - First Steps](references/R-firststeps.pdf)
-5. [An intro to R for new programmers](http://rforcats.net/)
-6. [introducing R to a non-programmer in one hour ](http://alyssafrazee.com/introducing-R.html)
-7. [Try R](http://tryr.codeschool.com/)
-8. [60+ R resources to improve your data skills](http://www.computerworld.com/article/2497464/business-intelligence/business-intelligence-60-r-resources-to-improve-your-data-skills.html)
-
-
-
-- [R is for archaeology](https://electricarchaeology.ca/2017/04/11/r-is-for-archaeology-a-report-on-the-2017-society-of-american-archaeology-meeting-by-b-marwick/)
-- [R for cats](https://rforcats.net/)
-
-
----
-
-- https://www.flickr.com/photos/38463026@N04/7432529536/
-- https://www.flickr.com/photos/apelad/6845309733
-- https://www.flickr.com/photos/shellewill79/5333263261/
-- http://littlebritain.wikia.com/wiki/File:Emily_Howard_(1).jpg
-- https://www.flickr.com/photos/cogdog/5528772562
+- [R news and tutorials contributed by R bloggers](https://www.r-bloggers.com/) - a blog aggregator
+- [RStudio Cheat Sheets](https://www.rstudio.com/resources/cheatsheets/) - various cheer sheets - from data import/export to specific applications
+- [R for cats](https://rforcats.net/) - meow...
+- [try R](http://tryr.codeschool.com/) - a gentle interactive introduction to R
+- [introducing R to a non-programmer in one hour](http://alyssafrazee.com/introducing-R.html) - it's possible!
+- [R for Data Science](http://r4ds.had.co.nz/) - a great book which contains chapters for beginners and for more advanced users
+- [Efficient R programming](https://csgillespie.github.io/efficientR/) - aka how to be more efficient working with R
+- [R is for archaeology](https://electricarchaeology.ca/2017/04/11/r-is-for-archaeology-a-report-on-the-2017-society-of-american-archaeology-meeting-by-b-marwick/) - R is not only used by statisticians
+- [60+ R resources to improve your data skills](http://www.computerworld.com/article/2497464/business-intelligence/business-intelligence-60-r-resources-to-improve-your-data-skills.html) - a way longer list of great resources
