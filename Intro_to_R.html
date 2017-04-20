@@ -146,7 +146,7 @@ x
 ## Why do I need a package?
 - As of March 2017, there were over 10,000 packages on the official repository (Comprehensive R Archive Network - CRAN)
 - A package is a group of functions
-- `install.packages()` function can be used to install packages from CRAN:
+- `install.packages()` can be used to install packages from CRAN:
 
 
 ```r
@@ -154,7 +154,7 @@ install.packages('ggplot2')
 ```
 
 - You only need to install a package once!
-- `update.packages()` function can be used to update installed packages
+- `update.packages()` can be used to update installed packages
 
 
 ```r
@@ -188,14 +188,14 @@ getwd()
 
 
 ```r
-setwd("home/jakub/Documents/rope/")
+setwd("home/jn/Documents/Intro_to_R/")
 ```
 
 - ...in Windows:
 
 
 ```r
-setwd("C:/Users/jakub/Documenty/rope/")
+setwd("C:/Users/jn/Documenty/Intro_to_R/")
 ```
 
 ---
@@ -203,23 +203,23 @@ setwd("C:/Users/jakub/Documenty/rope/")
 
 - Working directory is important, because it is allows to use a relative filepath
 - In most of the cases, the use of a relative filepath is recommended. It simplifies work, especially when data and code are moved between computers
-- Relative filepath *"data/plik.rds"*
+- Relative filepath *"data/file.rds"*
 
 
 ```r
 gap &lt;- readRDS("data/gapminder.rds")
 ```
 
-- Absolute filepath *"home/jakub/Documents/rope/data/plik.rds"*
+- Absolute filepath *"home/jn/Documents/Intro_to_R/data/file.rds"*
 
 ```r
-gap &lt;- readRDS("/home/jakub/Documents/rope/data/gapminder.rds")
+gap &lt;- readRDS("/home/jn/Documents/Intro_to_R/data/gapminder.rds")
 ```
 
 - ...in Windows:
 
 ```r
-gap &lt;- readRDS("C:/Users/jakub/Documents/rope/data/gapminder.rds")
+gap &lt;- readRDS("C:/Users/jn/Documents/Intro_to_R/data/gapminder.rds")
 ```
 
 ---
@@ -235,7 +235,7 @@ gap &lt;- readRDS("C:/Users/jakub/Documents/rope/data/gapminder.rds")
 ## RStudio
 - http://www.rstudio.com/ide/download/desktop
 - This is an Integrated Development Environment (IDE) for R
-- RStudio got many useful features, such as text editor, syntax highlighting, suggested code auto-completion, and many more
+- RStudio have many useful features, such as text editor, syntax highlighting, suggested code auto-completion, and many more
 
 ![](fig/rstudio.png)
 
@@ -275,7 +275,9 @@ gap &lt;- readRDS("C:/Users/jakub/Documents/rope/data/gapminder.rds")
 ## Online help
 - [stackoverflow.com](http://stackoverflow.com/questions/tagged/r)
 - [RDocumentation](http://www.rdocumentation.org/)
+- [twitter](http://twitter.com/) - #rstats
 - Web search engines [Rseek](http://www.rseek.org/), [Duckduckgo](http://duckduckgo.com/), [Google](http://google.com/), [Bing](http://bing.com/), etc.
+
 
 ---
 ## R wants data!
@@ -286,7 +288,7 @@ gap &lt;- readRDS("C:/Users/jakub/Documents/rope/data/gapminder.rds")
 ---
 ## CSV data
 
-- Reading a data
+- Reading data
 
 
 ```r
@@ -296,7 +298,7 @@ skoki2013 &lt;- read.csv("data/skijumps.csv")
 
 ![csv](fig/csv.png)
 
-- Writing a data
+- Writing data
 
 
 ```r
@@ -307,14 +309,14 @@ write.csv2(skoki2013, file="data/skijumps_csv.csv")
 ---
 ## RData format
 
-- Loading a data
+- Loading data
 
 
 ```r
 load("data/temperature.RData")
 ```
 
-- Saving a data
+- Saving data
 
 
 ```r
@@ -394,7 +396,7 @@ midwest
 ---
 ## Vector
 
-- A vektor is the simpliest R object class 
+- A vector is the simpliest R object class 
 - A vector can be created using `c()` function
 
 
@@ -453,7 +455,7 @@ class(vector_mixed)
 ## Data frame
 
 - A data frame is the most often used object class in R
-- Simple data frames resemble a table with rows (observations) and columns (variables)
+- Simple data frames resembles a table with rows (observations) and columns (variables)
 - A data frame can be also created by reading external files (such as .csv)
 
 
@@ -569,7 +571,7 @@ library('gapminder')
 data("gapminder")
 ```
 
-- The `str()` function displays the structure of an R object. It could shows, for example, a class of an object, number of observations (rows), number of variables (columns), names of variables, types of variables, and first few values
+- The `str()` function displays the structure of an R object. It returns, for example, a class of an object, number of observations (rows), number of variables (columns), names of variables, types of variables, and first few values
 
 
 ```r
@@ -589,7 +591,7 @@ str(gapminder)
 ---
 ## My first words
 
-- The `head()` function returns the first part of an object (default - the six first observations/rows)
+- The `head()` function returns the first part of an object (default - a six first observations/rows)
 
 
 ```r
