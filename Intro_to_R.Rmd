@@ -5,7 +5,7 @@ author: "Jakub Nowosad <br>nowosad.jakub@gmail.com"
 date: "2017-04-24"
 output:
   xaringan::moon_reader:
-    css: "mytheme.css"
+    css: ["default", "mytheme.css"]
     lib_dir: libs
     nature:
       highlightStyle: github
@@ -279,7 +279,7 @@ midwest
 ```
 
 ---
-## My object is realy classy
+## My object is really classy
 
 ![http://littlebritain.wikia.com/wiki/File:Emily_Howard_(1).jpg](fig/fashion.jpg)
 ###### http://littlebritain.wikia.com/wiki/File:Emily_Howard_(1).jpg
