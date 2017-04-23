@@ -19,7 +19,6 @@ editor_options:
 
 ```{r setup, include=FALSE}
 library(knitr)
-options(htmltools.dir.version = FALSE)
 ```
 
 ## Everything in R is an object
@@ -377,9 +376,7 @@ class(type_factor2)
 ---
 ## My first words
 
-```{r, echo=FALSE}
-knitr::include_graphics("fig/elem.png")
-```
+![](fig/elem.png)
 
 ---
 ## My first words
@@ -457,7 +454,6 @@ project/
           - 01_study_area.png
           - 02_boxplots.png
 ```
-
 
 ---
 ## What's next?
