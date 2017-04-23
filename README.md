@@ -1,8 +1,9 @@
 # Intro to R
 
-## Slides
+## Slides and code
 
-[Slides available here](https://rawcdn.githack.com/Nowosad/Intro_to_R/master/Intro_to_R.html)
+- [Slides are available here](https://rawcdn.githack.com/Nowosad/Intro_to_R/master/Intro_to_R.html)
+- [The code is available here](https://raw.githubusercontent.com/Nowosad/Intro_to_R/master/Intro_to_R.R)
 
 ## Prerequisites
 
