@@ -461,7 +461,7 @@ project/
 <!--https://blog.datazar.com/the-5-most-effective-ways-to-learn-r-d4cfdf0d524 -->
 
 - [R news and tutorials contributed by R bloggers](https://www.r-bloggers.com/) - a blog aggregator
-- [RStudio Cheat Sheets](https://www.rstudio.com/resources/cheatsheets/) - various cheer sheets - from data import/export to specific applications
+- [RStudio Cheat Sheets](https://www.rstudio.com/resources/cheatsheets/) - various cheet sheets - from data import/export to specific applications
 - [R for cats](https://rforcats.net/) - meow...
 - [try R](http://tryr.codeschool.com/) - a gentle interactive introduction to R
 - [introducing R to a non-programmer in one hour](http://alyssafrazee.com/introducing-R.html) - it's possible!
