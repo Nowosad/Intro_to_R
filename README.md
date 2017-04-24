@@ -2,7 +2,7 @@
 
 ## Slides and code
 
-- [Slides are available here](https://cdn.rawgit.com/Nowosad/Intro_to_R/33ee9299/Intro_to_R.html)
+- [Slides are available here](https://cdn.rawgit.com/Nowosad/Intro_to_R/510ab794/Intro_to_R.html)
 - [The code is available here](https://raw.githubusercontent.com/Nowosad/Intro_to_R/master/Intro_to_R.R)
 
 ## Prerequisites
