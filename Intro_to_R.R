@@ -71,12 +71,12 @@ getwd()
 ## ??"anova"
 
 ## ---- eval=FALSE---------------------------------------------------------
-## skoki2013 <- read.csv2("data/skijumps.csv")
-## skoki2013 <- read.csv("data/skijumps.csv")
+## skijumps <- read.csv2("data/skijumps.csv")
+## skijumps <- read.csv("data/skijumps.csv")
 
 ## ---- eval=FALSE---------------------------------------------------------
-## write.csv(skoki2013, file="data/skijumps_csv.csv")
-## write.csv2(skoki2013, file="data/skijumps_csv.csv")
+## write.csv(skijumps, file="data/skijumps_csv.csv")
+## write.csv2(skijumps, file="data/skijumps_csv.csv")
 
 ## ---- eval=FALSE---------------------------------------------------------
 ## load("data/temperature.RData")
@@ -100,13 +100,13 @@ midwest
 vector_text <- c("cat", "dog")
 vector_logical <- c(TRUE, FALSE)
 vector_numeric <- c(1, 2.35)
-vector_mixed <- c("kot", 2.35)
+vector_mixed <- c("cat", 2.35)
 
 ## ------------------------------------------------------------------------
 vector_text <- c("cat", "dog")
 vector_logical <- c(TRUE, FALSE)
 vector_numeric <- c(1, 2.35)
-vector_mixed <- c("kot", 2.35)
+vector_mixed <- c("cat", 2.35)
 
 ## ------------------------------------------------------------------------
 class(vector_text)
