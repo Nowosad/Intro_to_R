@@ -1,6 +1,3 @@
-## ----setup, include=FALSE------------------------------------------------
-library(knitr)
-
 ## ------------------------------------------------------------------------
 x <- 2
 x
@@ -55,7 +52,7 @@ getwd()
 ## setwd("C:/Users/jn/Documenty/Intro_to_R/")
 
 ## ---- eval=FALSE---------------------------------------------------------
-## gap <- readRDS("data/gapminder.rds")
+gap <- readRDS("data/gapminder.rds")
 
 ## ---- eval=FALSE---------------------------------------------------------
 ## gap <- readRDS("/home/jn/Documents/Intro_to_R/data/gapminder.rds")
@@ -65,27 +62,27 @@ getwd()
 
 ## ---- eval=FALSE---------------------------------------------------------
 ## # if you know a function name
-## ?mean
+?mean
 ## 
 ## # if you know what you want to do
-## ??"anova"
+??"anova"
 
 ## ---- eval=FALSE---------------------------------------------------------
-## skijumps <- read.csv2("data/skijumps.csv")
-## skijumps <- read.csv("data/skijumps.csv")
+skijumps <- read.csv2("data/skijumps.csv")
+skijumps <- read.csv("data/skijumps.csv")
 
 ## ---- eval=FALSE---------------------------------------------------------
 ## write.csv(skijumps, file="data/skijumps_csv.csv")
 ## write.csv2(skijumps, file="data/skijumps_csv.csv")
 
 ## ---- eval=FALSE---------------------------------------------------------
-## load("data/temperature.RData")
+load("data/temperature.RData")
 
 ## ---- eval=FALSE---------------------------------------------------------
 ## save(my_object, file="data/new_temperature.RData")
 
 ## ---- eval=FALSE---------------------------------------------------------
-## gap <- readRDS("data/gapminder.rds")
+gap <- readRDS("data/gapminder.rds")
 
 ## ---- eval=FALSE---------------------------------------------------------
 ## saveRDS(gap, file="data/new_gapminder.rds")
@@ -158,6 +155,3 @@ head(gapminder)
 
 ## ------------------------------------------------------------------------
 summary(gapminder)
-
-## project/
-
